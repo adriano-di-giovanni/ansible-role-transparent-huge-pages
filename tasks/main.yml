@@ -1,0 +1,12 @@
+---
+- name: install init script
+  template:
+    src: disable-transparent-huge-pages
+    dest: /etc/init.d/disable-transparent-huge-pages
+    mode: 0755
+
+- name: run service
+  service:
+    name: disable-transparent-huge-pages
+    state: started
+    enabled: yes

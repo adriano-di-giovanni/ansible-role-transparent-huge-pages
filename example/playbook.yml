@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - role: ansible-role-transparent-huge-pages
+      thp_x_start_before:
+        - redis
+        - mongod
